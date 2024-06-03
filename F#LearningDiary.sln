@@ -17,7 +17,11 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "codewars", "codewars\codewa
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "m2p", "m2p\m2p.fsproj", "{37FC2F88-34A1-468C-A86D-E048F34C6A7C}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "大衍之数", "大衍之数\大衍之数.fsproj", "{CC0E7BEF-8279-4028-A1E8-D7E058EF1476}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "大衍之数", "大衍之数\大衍之数.fsproj", "{CC0E7BEF-8279-4028-A1E8-D7E058EF1476}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "data-pipeline-homework", "data-pipeline-homework\data-pipeline-homework.fsproj", "{DFF3C037-DD69-4563-A834-8F32C3C167FF}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "test", "test\test.fsproj", "{6375C6DB-91EB-4AA3-9887-7B84E79A339F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{CC0E7BEF-8279-4028-A1E8-D7E058EF1476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC0E7BEF-8279-4028-A1E8-D7E058EF1476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC0E7BEF-8279-4028-A1E8-D7E058EF1476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF3C037-DD69-4563-A834-8F32C3C167FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF3C037-DD69-4563-A834-8F32C3C167FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF3C037-DD69-4563-A834-8F32C3C167FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF3C037-DD69-4563-A834-8F32C3C167FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6375C6DB-91EB-4AA3-9887-7B84E79A339F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6375C6DB-91EB-4AA3-9887-7B84E79A339F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6375C6DB-91EB-4AA3-9887-7B84E79A339F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6375C6DB-91EB-4AA3-9887-7B84E79A339F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

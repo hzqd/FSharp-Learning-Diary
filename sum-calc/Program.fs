@@ -1,10 +1,29 @@
 open System
 
-let println = fun x -> printfn $"{x}"
+let println x = printfn $"{x}"
 
 let tap f x = 
     f x
     x
+
+let tryParseInt (x:string) =
+    match Int32.TryParse x with
+    | (true, x) -> Some x
+    | _ -> None
+
+let tryParseFloat (x:string) = 
+    match Double.TryParse x with
+    | (true, x) -> Some x
+    | _ -> None
+
+let check (|Int|_|) (|Float|_|) value =
+    match value with
+    | Int i -> float i
+    | Float f -> f
+    | s -> failwith $"Parse '{s}' fail"
+
+let convert x =
+    check tryParseInt tryParseFloat x
 
 let cangjie_official_language_design_member_liu_jun_jie_implementation_based_on_inite_state_machine_translated_by_hzqd (text: string) =  
     let states = Array.init 3 (fun _ -> Array.create 128 -1)
@@ -23,11 +42,8 @@ let cangjie_official_language_design_member_liu_jun_jie_implementation_based_on_
             s <- states.[s].[int (text.[i])]
             i <- i + 1
         let numStr = text.Substring(beginIndex, i - beginIndex)
-        match System.Double.TryParse(numStr) with
-        | true, num -> sum <- sum + num
-        | _ -> ()
+        sum <- sum + convert numStr
     sum
-
 
 // Sum calc
 while true do

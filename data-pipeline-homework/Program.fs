@@ -8,7 +8,7 @@ let tap f x =
     f x
     x
 
-let dbg a = a |> tap(fun x -> printfn "%A" x)
+let dbg x = x |> tap(printfn "%A")
  
 let lazySplit (predicate: char -> bool) (s:string) =    
     let rec loop p =  

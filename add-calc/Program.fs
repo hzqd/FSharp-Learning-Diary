@@ -3,7 +3,7 @@
 open System
 
 // Test fn to dbg
-let println = fun x -> printfn $"{x}"
+let println x = printfn $"{x}"
 
 // Pipe
 let pipe f = f
@@ -26,11 +26,30 @@ type System.String with
             }    
         loop 0  
 
+let tryParseInt (x:string) =
+    match Int32.TryParse x with
+    | (true, x) -> Some x
+    | _ -> None
+
+let tryParseFloat (x:string) = 
+    match Double.TryParse x with
+    | (true, x) -> Some x
+    | _ -> None
+
+let check (|Int|_|) (|Float|_|) value =
+    match value with
+    | Int i -> float i
+    | Float f -> f
+    | s -> failwith $"Parse '{s}' fail"
+
+let convert x =
+    check tryParseInt tryParseFloat x
+
 // Sum calc
 while true do
     Console.ReadLine()
     |> tap(fun s -> if s.Length = 0 then Environment.Exit 0)
     |> pipe(_.LazySplit(fun c -> not (c >= '0' && c <= '9') && not (c = '.') && not(c = '-')))
-    |> Seq.map Double.Parse
+    |> Seq.map convert
     |> Seq.sum
     |> println

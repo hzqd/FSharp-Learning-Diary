@@ -31,10 +31,10 @@ let 轮 _ =
     | 8 (* 少阴 *) -> ("阴", "阴")
     | 9 (* 老阳 *) -> ("阳", "阴")
     | n -> failwith $"internal calculate error: {n}"
-    
-let 卦 = seq {1..6} |> Seq.map (fun _ -> 轮()) |> Seq.toList
+
+// 六轮成卦
+let 卦 = seq {1..6} |> Seq.map 轮 |> Seq.toList
 printfn "本:  变:"  
 卦 |> Seq.rev |> Seq.iter(fun (爻, 变) -> printfn $"{爻}   {变}")
 
-while Console.ReadLine().Length > 0 do
-()
+while Console.ReadLine().Length > 0 do ()
